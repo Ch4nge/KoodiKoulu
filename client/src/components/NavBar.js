@@ -9,12 +9,12 @@ const NavBar = () => {
     <div>
       <Menu>
         <Container>
-          <Menu.Item as='a' header>
+          <Menu.Item>
             <Link to='/'>
               Etusivu
             </Link>
           </Menu.Item>
-          <Menu.Item as='a'>
+          <Menu.Item>
             <Link to='/forum'>
               Foorumi
             </Link>

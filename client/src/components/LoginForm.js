@@ -1,5 +1,7 @@
 import React from 'react'
 import { Form, Button, Header, Modal } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { login } from '../reducers/userReducer'
 
 class LoginForm extends React.Component {
 
@@ -15,6 +17,15 @@ class LoginForm extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+  }
+
+  onClickHandler = () => {
+    const { username, password } = this.state
+    const credentials = {
+      username,
+      password
+    }
+    this.props.login(credentials)
   }
 
   render(){
@@ -37,7 +48,8 @@ class LoginForm extends React.Component {
               onChange={this.onChangeHandler}
               name='password'
               label='Salasana'
-              placeholder='Salasana'/>
+              placeholder='Salasana'
+              type='password'/>
             <Button color='green' onClick={this.onClickHandler}>Kirjaudu sisään</Button>
           </Form>
         </Modal.Content>
@@ -46,4 +58,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm
+export default connect(null, { login })( LoginForm )

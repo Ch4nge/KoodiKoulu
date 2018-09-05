@@ -4,7 +4,8 @@ import postsReducer from './reducers/postsReducer'
 import userReducer from './reducers/userReducer'
 
 const reducer = combineReducers({
-  posts: postsReducer
+  posts: postsReducer,
+  user: userReducer
 })
 
 const store = createStore(
