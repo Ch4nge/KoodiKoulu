@@ -1,6 +1,8 @@
 import React from 'react'
 import { Dropdown, Menu, Container } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import LoginForm from './LoginForm'
+import SignupForm from './SignupForm'
 
 const NavBar = () => {
   return (
@@ -27,6 +29,10 @@ const NavBar = () => {
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+          <Menu.Item divided='false' position='right'>
+            <LoginForm />
+            <SignupForm />
+          </Menu.Item>
         </Container>
       </Menu>
     </div>
