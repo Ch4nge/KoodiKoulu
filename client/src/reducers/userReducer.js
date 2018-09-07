@@ -1,6 +1,7 @@
 import loginService from '../services/login'
 
 const reducer = (state = null, action) => {
+  console.log(action.type)
   switch(action.type){
   case 'LOGIN':
     return action.user
@@ -17,6 +18,7 @@ export const login = (loginInfo) => {
       username: loginInfo.username,
       password: loginInfo.password
     })
+    console.log(user)
     if(user){
       window.localStorage.setItem('loggedUser', JSON.stringify(user))
     }
@@ -32,6 +34,15 @@ export const initUser = (user) => {
     dispatch({
       type: 'INITUSER',
       user: user
+    })
+  }
+}
+export const logout = () => {
+  return async (dispatch) => {
+    window.localStorage.clear()
+    dispatch({
+      type: 'INITUSER',
+      user: null
     })
   }
 }

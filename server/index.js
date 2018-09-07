@@ -21,7 +21,6 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.use('/api/login', loginRouter)
-app.use(express.static('build'))
 
 mongoose.connect(config.mongoUrl)
   .then( () => {

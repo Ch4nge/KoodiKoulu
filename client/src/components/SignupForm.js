@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' 
 import { Form, Button, Header, Modal } from 'semantic-ui-react'
 
 class SignupForm extends React.Component {
